@@ -1,0 +1,12 @@
+.allProducts{
+
+  list-style-type: none;
+  overflow-x: auto;
+}
+
+.allProducts::-webkit-scrollbar {
+  display: none;
+}
+img{
+  max-width: 100%;
+}

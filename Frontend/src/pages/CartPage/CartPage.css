@@ -1,0 +1,22 @@
+.noItem{
+    height: 84vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.hr{
+    margin-top: -1px;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,38 @@
+.links{
+    display: flex;
+    gap: 20px;
+}
+/* 
+.search{
+    outline-color: #F3A847;
+    width: 100%;
+    margin-right:20px;
+    
+} */
+
+.logo{
+    max-width: 140px;
+}
+
+.price{
+    color : #F8367E;
+}
+.productName{
+    color: #000;
+}
+
+.navbar{
+    background: #FBFAF9;
+}
+
+/* .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+} */
+/* #F8367E */
+/* #17C6AA */

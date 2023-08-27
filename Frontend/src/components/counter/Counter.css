@@ -1,0 +1,15 @@
+.counterPage{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+}
+.counter{
+    border: none;
+    background: #fff;
+}
+.text{
+    color: #17C6AA;
+    margin-top: 7px;
+    font-size: 17px;
+}
