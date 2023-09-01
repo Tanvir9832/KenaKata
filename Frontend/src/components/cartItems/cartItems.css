@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     text-align: center;
+    font-size: 17px;
 }
 
 .item{
@@ -19,17 +20,11 @@
     justify-content: center;
 }
 
-.continueBtn,.clearBtn{
-    padding:13px 20px;
-    margin-bottom: 5px;
+
+.btnDelete{
     border: none;
-    background: #17C6AA  ;
-    color: #fff;
-    /* #F8367E 
-     #17C6AA  */
-}
-.clearBtn{
-    background: #F8367E  ;
+    background: #fff;
+    font-size: 17px;
 }
 @media (max-width: 767px) {
     .item{

@@ -10,6 +10,8 @@ import { StoreProvider } from './Store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavbarComponent from './components/Navbar/NavbarComponent';
+import Shipping from './pages/Shipping/Shipping';
+import LoginRegister from './pages/Auth/LoginRegister';
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path='/shipping' element={<Shipping />} />
+          <Route path='/login' element={<LoginRegister />} />
           <Route path='*' element={<No />} />
         </Routes>
         <ToastContainer position="bottom-center" />

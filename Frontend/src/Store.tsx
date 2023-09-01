@@ -17,12 +17,12 @@ const initialState: AppState = {
     }
 }
 
-type Action = { type: "ADD_TO_CART", payload: CartItem } | { type: "REMOVE_FROM_CART" ,payload : CartItem }
+type Action = { type: "ADD_TO_CART", payload: CartItem } | { type: "REMOVE_FROM_CART" ,payload : CartItem } | {type :"CLEAR_CART"}
 
 function reducer(state: AppState, action: Action): AppState {
     switch (action.type) {
         case 'ADD_TO_CART':
-            {   
+            {
                 const newItem = action.payload;
                 const existItem = state.cart.cartItems.find((item: CartItem) => item.id === newItem.id);
 
@@ -30,6 +30,18 @@ function reducer(state: AppState, action: Action): AppState {
                 localStorage.setItem('cartItems', JSON.stringify(cartItems));
                 return { ...state, cart: { ...state.cart, cartItems } };
             }
+        case 'REMOVE_FROM_CART' :{
+            const item = action.payload;
+            const cartItems = state.cart.cartItems.filter((i : CartItem)=>item.id !== i.id);
+            
+            localStorage.setItem('cartItems',JSON.stringify(cartItems));
+           return {...state,cart : {...state.cart , cartItems}}
+        } 
+        case 'CLEAR_CART':{
+            localStorage.setItem('cartItems',JSON.stringify([]));
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')!);
+            return {...state , cart : {...state.cart , cartItems}}
+        }
         default:
             return state
     }

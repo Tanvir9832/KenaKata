@@ -10,16 +10,23 @@ const CartItems = ({ id, countInStock, image, name, price, quantity }: CartItem)
     const item : CartItem ={
         id,countInStock,image,name,price,quantity
     }
+    const {dispatch}= useContext(Store);
+
+    //!increment function
     const incrementCount=()=>{
         
         updateCartHandler(item,quantity+1);
     }
-    const decrementCount=()=>{
 
-        
+    //!decrement function
+    const decrementCount=()=>{
+        updateCartHandler(item,quantity-1);
+        if(quantity<=1){
+            deleteProduct();
+        }
     }
     
-    const {dispatch}= useContext(Store);
+    //! update function
     const updateCartHandler = (item: CartItem, quantity: number) => {
         console.log(quantity);
         if (item.countInStock < quantity) {
@@ -28,7 +35,12 @@ const CartItems = ({ id, countInStock, image, name, price, quantity }: CartItem)
         }
         dispatch({ type: "ADD_TO_CART", payload: { ...item, quantity } });
     }
-    
+
+    //! delete product
+    const deleteProduct =()=>{
+        dispatch({type: "REMOVE_FROM_CART" ,payload : item})
+    }
+
     return (
         <div className='cartItem mb-3'>
             <Link to={`/product/${id}`} className="item">
@@ -47,7 +59,7 @@ const CartItems = ({ id, countInStock, image, name, price, quantity }: CartItem)
                 <p>${ price * quantity}</p>
             </div>
             <div>
-                <p className="text-danger">
+                <p onClick={deleteProduct} className="text-danger btnDelete">
                 <i className="fa-solid fa-xmark"></i>
                 </p>
             </div>
